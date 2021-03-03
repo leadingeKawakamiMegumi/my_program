@@ -1,0 +1,14 @@
+#list：Already created
+
+csv_name = "result.csv"
+dict_list = {0:"ix", 1:"iy", 2:"result_x", 3:"result_y",
+             4:"angle",5:"move_flag",
+            }
+            
+def list_save(list,csv_name,dict_list):
+    '''
+    list → DataFrame → csv
+    '''
+    df = pd.DataFrame(list)
+    df_new = df.rename(columns = dict_list)
+    df_new.to_csv(csv_name)
