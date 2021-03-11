@@ -1,4 +1,4 @@
-f rotation_im(im,angle,scale):
+def rotation_im(im,angle,scale):
     '''
     input
     im: im.dtype = np.uint8
