@@ -1,11 +1,15 @@
-def rotation_im(im,angle,scale):
+f rotation_im(im,angle,scale):
+    '''
+    input
+    im: im.dtype = np.uint8
+    angle: 左周り角度(見た目）
+    scale: 倍率
+    '''
+    import cv2
     h,w = im.shape
-    center = (w/2,h/2)
-    #center = ((w-1)/2,(h-1)/2)
+    center = ((w-1)/2,(h-1)/2)
     
-    #getRotationMatrix2D関数を使用
-    trans = cv2.getRotationMatrix2D(center, angle , scale) #左周り角度(見た目）
+    trans = cv2.getRotationMatrix2D(center, angle , scale) 
     
-    #アフィン変換
     image2 = cv2.warpAffine(im, trans, (w,h))
     return(image2)
