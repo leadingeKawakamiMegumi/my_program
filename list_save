@@ -2,7 +2,7 @@
 
 csv_name = "result.csv"
 dict_list = {0:"ix", 1:"iy", 2:"param0", 3:"param1",
-             4:"param2",5:"param3",
+             4:"param2",5:"param3"
             }
             
 def list_save(list,csv_name,dict_list):
