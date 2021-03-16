@@ -1,3 +1,5 @@
+import cv2
+
 def rotation_im(im,angle,scale):
     '''
     input
@@ -5,7 +7,6 @@ def rotation_im(im,angle,scale):
     angle: 左周り角度(見た目）
     scale: 倍率
     '''
-    import cv2
     h,w = im.shape
     center = ((w-1)/2,(h-1)/2)
     
