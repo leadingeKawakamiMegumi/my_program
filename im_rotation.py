@@ -2,10 +2,17 @@ import cv2
 
 def rotation_im(im,angle,scale):
     '''
-    input
-    im: im.dtype = np.uint8
+    Parameters
+    -----------
+    im: image
+        8-bit single-channel image.
+    
     angle: 左周り角度(見た目）
     scale: 倍率
+    
+    Returns
+    ---------
+    np.uint8
     '''
     h,w = im.shape
     center = ((w-1)/2,(h-1)/2)
