@@ -1,3 +1,5 @@
+import numpy as np
+
 def sobelxy(img):
 
     img2 = img.copy()
