@@ -21,3 +21,11 @@ def rotation_im(im,angle,scale):
     
     image2 = cv2.warpAffine(im, trans, (w,h))
     return(image2)
+
+
+def min_max_norm(image):
+    a = np.min(image)
+    b = np.max(image)
+    im_out = (image - a) / (b-a) *255
+    im_out = im_out.astype(np.uint8)
+    return(im_out)
