@@ -1,4 +1,5 @@
 import cv2
+import numpy as np
 
 def rotation_im(im,angle,scale):
     '''
@@ -20,7 +21,7 @@ def rotation_im(im,angle,scale):
     trans = cv2.getRotationMatrix2D(center, angle , scale) 
     
     image2 = cv2.warpAffine(im, trans, (w,h))
-    return(image2)]
+    return(image2)
     
 def image_translation(im,shift_x,shift_y):
     '''
@@ -52,5 +53,5 @@ def make_cirkle_mask(im_size):
     '''
     im_size_half = int(im_size/2) 
     print("circle_r",im_size_half) 
-    im_mask = np.zeros((im_size,im_size),int)
+    im_mask = np.zeros((im_size,im_size),np.uint8)
     return(cv2.circle(im_mask,(im_size_half,im_size_half),im_size_half,255,-1))
