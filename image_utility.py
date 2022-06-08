@@ -1,6 +1,21 @@
 import cv2
 import numpy as np
 
+def jyuusin(img):
+    mu = cv2.moments(img, False)
+    xc,yc= mu["m10"]/mu["m00"], mu["m01"]/mu["m00"]
+    return(xc,yc)
+
+def sobelxy(img):
+    img2 = img.copy()
+    sobelx = cv2.Sobel(img2,cv2.CV_64F,1,0,ksize=5)
+    sobely = cv2.Sobel(img2,cv2.CV_64F,0,1,ksize=5)
+    grad2 = np.sqrt(sobelx  ** 2 + sobely ** 2) 
+    hosei = np.max(grad2)
+    grad2 = grad2/hosei * 255
+    imgs = grad2.astype(np.uint8)
+    return(imgs)
+
 def rotation_im(im,angle,scale):
     '''
     Parameters
