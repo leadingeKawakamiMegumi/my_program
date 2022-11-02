@@ -12,3 +12,7 @@ def list_save(list,csv_name,dict_list):
     df = pd.DataFrame(list)
     df_new = df.rename(columns = dict_list)
     df_new.to_csv(csv_name)
+
+
+#read
+df = pd.read_csv(path ,index_col=0)
