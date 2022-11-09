@@ -1,0 +1,29 @@
+#https://qiita.com/maskot1977/items/e4f5f71200180865986e
+#https://pythonguides.com/python-scipy-curve-fit/
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib.cm as cm
+from scipy.optimize import curve_fit  
+
+param_ini = (1.5,20) #初期値
+param_bounds = ([0,0],[np.inf,np.inf]) #拘束条件
+
+
+def sigmoid(X,a,b):
+    Y1 =1+ np.exp(b - a*X)
+    Y = 1 / Y1
+    return Y
+
+
+def sigmoid_fit(x_observed,y_observed,param_ini,param_bounds):
+    popt, pcov = curve_fit(sigmoid,x_observed,y_observed,p0 = param_ini,bounds=param_bounds) # poptは最適推定値、pcovは共分散
+    y_fit = sigmoid(x_observed,popt[0],popt[1])
+    plt.scatter(x_observed,y_observed,color = "gray")
+    plt.plot(x_observed,y_fit)
+    return(popt[0],popt[1],y_fit)
+
+
+#param, cov = curve_fit(response_func, fit_list_x, fit_list_y, p0 = param_ini, maxfev = 10000, bounds=param_bounds)
+#maxfev　関数呼び出しの最大数
