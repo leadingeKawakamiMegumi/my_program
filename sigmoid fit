@@ -23,7 +23,23 @@ def sigmoid_fit(x_observed,y_observed,param_ini,param_bounds):
     plt.scatter(x_observed,y_observed,color = "gray")
     plt.plot(x_observed,y_fit)
     return(popt[0],popt[1],y_fit)
+    
 
+def gauss(X,m,s,k): #m:平均値
+    Y0 = ((X-m)/s)**2
+    Y1 = np.exp(-0.5*Y0)
+    Y2 =1/s/(2*np.pi)**0.5 * Y1
+    Y = k* Y2
+    return Y
+
+
+def gauss_fit(x_observed,y_observed,param_ini,param_bounds):
+    popt, pcov = curve_fit(gauss,x_observed,y_observed,p0 = param_ini) # poptは最適推定値、pcovは共分散
+    y_fit = gauss(x_observed,popt[0],popt[1],popt[2])
+    plt.scatter(x_observed,y_observed,color = "gray")
+    plt.plot(x_observed,y_fit)
+    return(popt[0],popt[1],popt[2],y_fit)
+    
 
 #param, cov = curve_fit(response_func, fit_list_x, fit_list_y, p0 = param_ini, maxfev = 10000, bounds=param_bounds)
 #maxfev　関数呼び出しの最大数
