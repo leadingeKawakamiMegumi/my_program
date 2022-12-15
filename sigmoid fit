@@ -45,3 +45,6 @@ def gauss_fit(x_observed,y_observed,param_ini,param_bounds):
 #maxfev　関数呼び出しの最大数
 #sigmoid HWHM= popt[1]/popt[0]
 #gauss  HWHM~1.175 popt[1]
+
+#from decimal import Decimal, ROUND_HALF_UP, ROUND_HALF_EVEN
+#Decimal(str( popt[1]/popt[0])).quantize(Decimal('0'), rounding=ROUND_HALF_UP)
