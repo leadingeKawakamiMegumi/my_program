@@ -1,0 +1,22 @@
+import datetime
+
+dt_today = str(datetime.date.today())
+
+folder_name = "data" + dt_today
+outcsv = 1
+if not os.path.exists(folder_name):
+    os.makedirs(folder_name)
+else:
+    if outcsv == 1:
+        dt_now = str(datetime.datetime.now())
+        dt_now  = dt_now.replace(":","_")
+        folder_name2 = folder_name + dt_now 
+        os.makedirs(folder_name2)
+        print("folderが既にあります。")
+        print( folder_name2 + "で作成しました")
+    else:
+        print("folderが既にありますが、解析結果は出力されないのでこのまま続けます")
+        folder_name2 = folder_name
+        
+    #dbgfolder
+    folder_name = folder_name2
