@@ -102,7 +102,7 @@ def intersection_line2(aa1,bb1,aa2,bb2):
 
 def distance_point_line(xp,yp,ka,kb):
     '''
-    distance between point and line ka*x + kb
+    distance between point and line ｙ＝ka*x + kb
     input----------------------
     point:(xp,yp)
     ka:slope 
@@ -110,5 +110,5 @@ def distance_point_line(xp,yp,ka,kb):
     output--------------------
     kyori (float64)
     '''
-    kyori = (ka*xp -yp + kb)/np.sqrt(ka*ka + 1)
+    kyori = (ka*xp -yp + kb)/np.sqrt(ka*ka + 1)　#?
     return kyori
