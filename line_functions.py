@@ -14,8 +14,14 @@ def line_2poit(px1,py1,px2,py2):
     ----------------------------------
     aa:2点を通る直線の傾き
     bb:2点を通る直線の切片
+    
+    cf.
+    https://hacker.trickstorm.com/?p=496
     '''
     if px1==px2:
+        aa = None
+        bb = None
+    elif py1==py2:
         aa = 0
         bb = py1
     else:    
