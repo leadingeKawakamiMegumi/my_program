@@ -23,7 +23,7 @@ def rotation_im(im,angle,scale):
     im: image
         8-bit single-channel image.
     
-    angle: 左周り角度(見た目）
+    angle: 左周り角度(見た目）[degree]
     scale: 倍率
     
     Returns
