@@ -4,7 +4,7 @@
 # 2つの直線の交点を求める
 #　点と直線の距離を求める
 
-def line_2poit(px1,py1,px2,py2):
+def line_2point(px1,py1,px2,py2):
     '''
     input
     ----------------------------------
